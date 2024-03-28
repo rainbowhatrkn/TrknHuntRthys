@@ -1,0 +1,15 @@
+modules = ["python-3.10:v18-20230807-322e88b"]
+run = "python3 main.py -mT 30 -f ip_nude.txt -oJ out.json"
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "python3"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[deployment]
+run = ["sh", "-c", "python3 main.py -h"]
+deploymentTarget = "cloudrun"
